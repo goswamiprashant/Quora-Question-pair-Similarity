@@ -117,96 +117,102 @@ Blog 2 : https://towardsdatascience.com/identifying-duplicate-questions-on-quora
  Initially, we constructed few features like:<br/>
  
  <br/>
- - ____freq_qid1____ = Frequency of qid1's
- 
- - ____freq_qid2____ = Frequency of qid2's 
- - ____q1len____ = Length of q1
- - ____q2len____ = Length of q2
- - ____q1_n_words____ = Number of words in Question 1
- - ____q2_n_words____ = Number of words in Question 2
- - ____word_Common____ = (Number of common unique words in Question 1 and Question 2)
- - ____word_Total____ =(Total num of words in Question 1 + Total num of words in Question 2)
- - ____word_share____ = (word_common)/(word_Total)
- - ____freq_q1+freq_q2____ = sum total of frequency of qid1 and qid2 
- - ____freq_q1-freq_q2____ = absolute difference of frequency of qid1 and qid2 
-
+ <ul>
+  <li><b> freq_qid1 </b>  = Frequency of qid1's </li>
+ <li><b> freq_qid2 </b>   = Frequency of qid2's </li>
+ <li><b> q1len </b>  = Length of q1 </li>
+ <li><b> q2len </b>  = Length of q2 </li>
+ <li><b> q1_n_words </b>  = Number of words in Question 1 </li>
+ <li><b> q2_n_words </b>  = Number of words in Question 2 </li>
+ <li><b> word_Common </b>  = (Number of common unique words in Question 1 and Question 2) </li>
+ <li><b> word_Total </b> =(Total num of words in Question 1 + Total num of words in Question 2) </li>
+ <li><b> word_share </b> = (word_common)/(word_Total) </li>
+ <li><b> freq_q1+freq_q2 </b> = sum total of frequency of qid1 and qid2 </li>
+ <li><b> freq_q1-freq_q2 </b>  = absolute difference of frequency of qid1 and qid2 </li>
+ </ul>
  
  <h3>4.2 Advance Feature Exteaction </h3>
   
-  Definition:
-- __Token__: You get a token by splitting sentence a space
-- __Stop_Word__ : stop words as per NLTK.
-- __Word__ : A token that is not a stop_word
+<p>
+Definition:<br/>
+ <ul type=none>
+  <li>
+ <b>Token</b>: You get a token by splitting sentence a space<br/>
+ <b>Stop_Word</b>: stop words as per NLTK.<br/>
+ <b>Word</b> : A token that is not a stop_word
+  </li>
+  </ul>
 <br/>
 <p> We have tried some advanced features which are as follows : </p>
-  
-- __cwc_min__ :  Ratio of common_word_count to min lenghth of word count of Q1 and Q2 <br>cwc_min = common_word_count / (min(len(q1_words), len(q2_words))
+  <ul type=none>
+   <li>
+ <b>cwc_min__ </b>:  Ratio of common_word_count to min lenghth of word count of Q1 and Q2 <br>cwc_min = common_word_count / (min(len(q1_words), len(q2_words))
+<br>
+
+<b>cwc_max</b>:  Ratio of common_word_count to max lenghth of word count of Q1 and Q2 <br>cwc_max = common_word_count / (max(len(q1_words), len(q2_words))
 <br>
 <br>
   
-  
-- __cwc_max__ :  Ratio of common_word_count to max lenghth of word count of Q1 and Q2 <br>cwc_max = common_word_count / (max(len(q1_words), len(q2_words))
+<b>csc_min</b>:  Ratio of common_stop_count to min lenghth of stop count of Q1 and Q2 <br> csc_min = common_stop_count / (min(len(q1_stops), len(q2_stops))
 <br>
 <br>
   
-- __csc_min__ :  Ratio of common_stop_count to min lenghth of stop count of Q1 and Q2 <br> csc_min = common_stop_count / (min(len(q1_stops), len(q2_stops))
+<b>csc_max</b> :  Ratio of common_stop_count to max lenghth of stop count of Q1 and Q2<br>csc_max = common_stop_count / (max(len(q1_stops), len(q2_stops))
 <br>
 <br>
   
-- __csc_max__ :  Ratio of common_stop_count to max lenghth of stop count of Q1 and Q2<br>csc_max = common_stop_count / (max(len(q1_stops), len(q2_stops))
-<br>
-<br>
-  
-- __ctc_min__ :  Ratio of common_token_count to min lenghth of token count of Q1 and Q2<br>ctc_min = common_token_count / (min(len(q1_tokens), len(q2_tokens))
+<b>ctc_min</b>:  Ratio of common_token_count to min lenghth of token count of Q1 and Q2<br>ctc_min = common_token_count / (min(len(q1_tokens), len(q2_tokens))
 <br>
 <br>
 
-- __ctc_max__ :  Ratio of common_token_count to max lenghth of token count of Q1 and Q2<br>ctc_max = common_token_count / (max(len(q1_tokens), len(q2_tokens))
+<b>ctc_max</b> :  Ratio of common_token_count to max lenghth of token count of Q1 and Q2<br>ctc_max = common_token_count / (max(len(q1_tokens), len(q2_tokens))
 <br>
 <br>
         
-- __last_word_eq__ :  Check if First word of both questions is equal or not<br>last_word_eq = int(q1_tokens[-1] == q2_tokens[-1])
+<b>ast_word_eq</b>:  Check if First word of both questions is equal or not<br>last_word_eq = int(q1_tokens[-1] == q2_tokens[-1])
 <br>
 <br>
 
-- __first_word_eq__ :  Check if First word of both questions is equal or not<br>first_word_eq = int(q1_tokens[0] == q2_tokens[0])
+<b>first_word_eq</b>:  Check if First word of both questions is equal or not<br>first_word_eq = int(q1_tokens[0] == q2_tokens[0])
 <br>
 <br>
         
-- __abs_len_diff__ :  Abs. length difference<br>abs_len_diff = abs(len(q1_tokens) - len(q2_tokens))
+<b>abs_len_diff</b>:  Abs. length difference<br>abs_len_diff = abs(len(q1_tokens) - len(q2_tokens))
 <br>
 <br>
 
-- __mean_len__ :  Average Token Length of both Questions<br>mean_len = (len(q1_tokens) + len(q2_tokens))/2
+<b>mean_len</b>:  Average Token Length of both Questions<br>mean_len = (len(q1_tokens) + len(q2_tokens))/2
 <br>
 <br>
 
 
-- __fuzz_ratio__ :  https://github.com/seatgeek/fuzzywuzzy#usage
+<b>fuzz_ratio</b>:  https://github.com/seatgeek/fuzzywuzzy#usage<br/>
 http://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/
 <br>
 <br>
 
-- __fuzz_partial_ratio__ :  https://github.com/seatgeek/fuzzywuzzy#usage
-http://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/
-<br>
-<br>
-
-
-- __token_sort_ratio__ : https://github.com/seatgeek/fuzzywuzzy#usage
+<b>fuzz_partial_ratio</b>:  https://github.com/seatgeek/fuzzywuzzy#usage<br/>
 http://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/
 <br>
 <br>
 
 
-- __token_set_ratio__ : https://github.com/seatgeek/fuzzywuzzy#usage
+<b>token_sort_ratio</b> : https://github.com/seatgeek/fuzzywuzzy#usage<br/>
 http://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/
 <br>
 <br>
 
-- __longest_substr_ratio__ :  Ratio of length longest common substring to min lenghth of token count of Q1 and Q2<br>longest_substr_ratio = len(longest common substring) / (min(len(q1_tokens), len(q2_tokens))
 
+<b>token_set_ratio</b>: https://github.com/seatgeek/fuzzywuzzy#usage<br/>
+http://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/
+<br>
+<br>
 
+<b>longest_substr_ratio</b>:  Ratio of length longest common substring to min lenghth of token count of Q1 and Q2<br>longest_substr_ratio = len(longest common substring) / (min(len(q1_tokens), len(q2_tokens))
+   </li>
+ </ul>
+</div>
+ </p>
    <h2> 3. Machine Learning Problem </h2>
    <h3>3.1Mapping the real world problem to an ML problem </h3>
    <h4>3.1.1 Type of Machine Leaning Problem </h4>
