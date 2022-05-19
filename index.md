@@ -14,29 +14,14 @@ Over 100 million people visit Quora every month, so it's no surprise that many p
 
 Credits: Kaggle
 
-Problem Statement
+  <h3>1.2 Problem Statement</h3>
 
 Identify which questions asked on Quora are duplicates of questions that have already been asked.
 This could be useful to instantly provide answers to questions that have already been answered.
 We are tasked with predicting whether a pair of questions are duplicates or not.
 </p>
- <h3>1.2 Sources/Useful Links</h3>
-<p>
-   Source : https://www.kaggle.com/c/quora-question-pairs
-
-Useful Links
-Discussions : https://www.kaggle.com/anokas/data-analysis-xgboost-starter-0-35460-lb/comments<br/>
-Kaggle Winning Solution and other approaches: https://www.dropbox.com/sh/93968nfnrzh8bp5/AACZdtsApc1QSTQc7X0H3QZ5a?dl=0<br/>
-Blog 1 : https://engineering.quora.com/Semantic-Question-Matching-with-Deep-Learning<br/>
-Blog 2 : https://towardsdatascience.com/identifying-duplicate-questions-on-quora-top-12-on-kaggle-4c1cf93f1c30<br/>
-   </p>
-   <h3>1.3 Real world/Business Objectives and Constraints </h3>
-   <ul>
-<li>The cost of a mis-classification can be very high.</li>
-<li>You would want a probability of a pair of questions to be duplicates so that you can choose any threshold of choice.</li>
-<li>No strict latency concerns.</li>
-<li>Interpretability is partially important.</li>
-     </ul>
+ 
+   
    <h2>2.Dataset</h2>
 <h3>2.1.Data Overview </h3>
   <ul>
@@ -213,19 +198,61 @@ http://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/
  </ul>
 </div>
  </p>
-   <h2> 3. Machine Learning Problem </h2>
-   <h3>3.1Mapping the real world problem to an ML problem </h3>
-   <h4>3.1.1 Type of Machine Leaning Problem </h4>
+   <h2> 5. Machine Learning Problem </h2>
+   <h3>5.1 Mapping the real world problem to an ML problem </h3>
+   <h4>5.1.1 Type of Machine Leaning Problem </h4>
 It is a binary classification problem, for a given pair of questions we need to predict if they are duplicate or not.
 
-   <h4>3.1.2 Performance Metric </h4>
+   <h4>5.1.2 Performance Metric </h4>
 Source: https://www.kaggle.com/c/quora-question-pairs#evaluation
-
 Metric(s):
-
-log-loss : https://www.kaggle.com/wiki/LogarithmicLoss
-Binary Confusion Matrix
-   <h3> 3.2 Train and Test and CV Construction </h3>
+<p>log-loss : https://www.kaggle.com/wiki/LogarithmicLoss</p>
+<p>Binary Confusion Matrix</p>
+<h3>5.2 Real world/Business Objectives and Constraints </h3>
+   <ul>
+<li>The cost of a mis-classification can be very high.</li>
+<li>You would want a probability of a pair of questions to be duplicates so that you can choose any threshold of choice.</li>
+<li>No strict latency concerns.</li>
+<li>Interpretability is partially important.</li>
+     </ul>
+   <h3> 5.3 Train and Test and CV Construction </h3>
 We build train and test by randomly splitting in the ratio of 50:30:20
+  <h3> 5.4. Model Building Approach</h3>
+  <p> Keeping these Objectives and constraints in mind we have tried different classififcation algorithms to achieve them. 
+   To get optimized results ,we use different Classification algorithms like Logistic Regression , SVM and XGBoost on the engineered feature set.</p>
+<h3>5.5 Result </h3>
+<p> <table>
+  <tr>
+  <th>Model</th>
+  <th>Train Loss</th>
+  <th>Test Loss</th>
+ </tr>
+ <tr>
+  <td>Logistic Regression</td> 
+  <td> 0.4631 </td>
+  <td> 0.4624 </td>
+ </tr>
+ <tr>
+  <td>SVM</td> 
+  <td> 0.4726</td>
+  <td>  0.4688 </td>
+ </tr>
+ <tr>
+  <td>XG Boost</td> 
+  <td> 0.2245 </td>
+  <td> 0.3203</td>
+ </tr>
+ </table>
+ </p>
+<h2>6.Sources/Useful Links</h3>
+<p>
+   Source : https://www.kaggle.com/c/quora-question-pairs
+
+Useful Links
+Discussions : https://www.kaggle.com/anokas/data-analysis-xgboost-starter-0-35460-lb/comments<br/>
+Kaggle Winning Solution and other approaches: https://www.dropbox.com/sh/93968nfnrzh8bp5/AACZdtsApc1QSTQc7X0H3QZ5a?dl=0<br/>
+Blog 1 : https://engineering.quora.com/Semantic-Question-Matching-with-Deep-Learning<br/>
+Blog 2 : https://towardsdatascience.com/identifying-duplicate-questions-on-quora-top-12-on-kaggle-4c1cf93f1c30<br/>
+   </p>
 </body>
 </html>
