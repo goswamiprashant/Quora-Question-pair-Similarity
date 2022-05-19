@@ -218,7 +218,7 @@ Metric(s):
    <h3> 5.3 Train and Test and CV Construction </h3>
 We build train and test by randomly splitting in the ratio of 50:30:20
   <h3> 5.4. Model Building Approach</h3>
-  <p> Keeping these Objectives and constraints in mind we have tried different classififcation algorithms to achieve them. 
+  <p> Keeping these Objectives and constraints in mind we have tried different classification algorithms to achieve them. 
    To get optimized results ,we use different Classification algorithms like Logistic Regression , SVM and XGBoost on the engineered feature set.</p>
 <h3>5.5 Result </h3>
 <p> <table>
