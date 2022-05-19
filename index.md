@@ -246,13 +246,13 @@ We build train and test by randomly splitting in the ratio of 50:30:20
  </p>
 <h2>6.Sources/Useful Links</h2>
 <p>
-   Source : https://www.kaggle.com/c/quora-question-pairs
+ Source :<a>https://www.kaggle.com/c/quora-question-pairs</a><br/>
 
 Useful Links
 Discussions : <a>https://www.kaggle.com/anokas/data-analysis-xgboost-starter-0-35460-lb/comments</a><br/>
-Kaggle Winning Solution and other approaches: https://www.dropbox.com/sh/93968nfnrzh8bp5/AACZdtsApc1QSTQc7X0H3QZ5a?dl=0<br/>
-Blog 1 : https://engineering.quora.com/Semantic-Question-Matching-with-Deep-Learning<br/>
-Blog 2 : https://towardsdatascience.com/identifying-duplicate-questions-on-quora-top-12-on-kaggle-4c1cf93f1c30<br/>
+Kaggle Winning Solution and other approaches: <a>https://www.dropbox.com/sh/93968nfnrzh8bp5/AACZdtsApc1QSTQc7X0H3QZ5a?dl=0</a><br/>
+Blog 1 : <a>https://engineering.quora.com/Semantic-Question-Matching-with-Deep-Learning</a><br/>
+Blog 2 : <a>https://towardsdatascience.com/identifying-duplicate-questions-on-quora-top-12-on-kaggle-4c1cf93f1c30</a><br/>
    </p>
 </body>
 </html>
