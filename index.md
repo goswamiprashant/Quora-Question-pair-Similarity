@@ -244,7 +244,7 @@ We build train and test by randomly splitting in the ratio of 50:30:20
  </tr>
  </table>
  </p>
-<h2>6.Sources/Useful Links</h3>
+<h2>6.Sources/Useful Links</h2>
 <p>
    Source : https://www.kaggle.com/c/quora-question-pairs
 
