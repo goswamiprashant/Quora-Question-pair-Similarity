@@ -88,7 +88,7 @@ We are tasked with predicting whether a pair of questions are duplicates or not.
   </ul>    
     </p>
    
-   <h3> 3.2 Preprocessing of Text </h2>
+   <h3> 3.2 Preprocessing of Text </h3>
  - These are the following that we followeed during text preprocessing :
     <ul>
      <li>Removing html tags </li>
@@ -249,7 +249,7 @@ We build train and test by randomly splitting in the ratio of 50:30:20
    Source : https://www.kaggle.com/c/quora-question-pairs
 
 Useful Links
-Discussions : https://www.kaggle.com/anokas/data-analysis-xgboost-starter-0-35460-lb/comments<br/>
+Discussions : <a>https://www.kaggle.com/anokas/data-analysis-xgboost-starter-0-35460-lb/comments</a><br/>
 Kaggle Winning Solution and other approaches: https://www.dropbox.com/sh/93968nfnrzh8bp5/AACZdtsApc1QSTQc7X0H3QZ5a?dl=0<br/>
 Blog 1 : https://engineering.quora.com/Semantic-Question-Matching-with-Deep-Learning<br/>
 Blog 2 : https://towardsdatascience.com/identifying-duplicate-questions-on-quora-top-12-on-kaggle-4c1cf93f1c30<br/>
